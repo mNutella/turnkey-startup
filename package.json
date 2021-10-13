@@ -1,0 +1,30 @@
+{
+  "name": "next-tailwindcss-template",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "11.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.2.1",
+    "autoprefixer": "^10.3.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-next": "11.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-react": "^7.25.0",
+    "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
+    "tailwindcss": "^2.2.8"
+  }
+}
