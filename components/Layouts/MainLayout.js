@@ -6,9 +6,7 @@ export default function MainLayout({
   children
 }) {
   return (
-    <div
-      className={className}
-    >
+    <div className={className}>
       <div className={'h-full container mx-auto' + ` ${classNameContainer}`}>
         {children}
       </div>
