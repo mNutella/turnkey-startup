@@ -3,7 +3,7 @@ import icons from './icons'
 const Icon = ({
   classNameWrapper,
   className,
-  name,
+  name = 'default',
   fill = 'none',
   onClick
 }) => {

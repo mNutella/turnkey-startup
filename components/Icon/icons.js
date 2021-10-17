@@ -1,4 +1,8 @@
 const icons = {
+  default: {
+    viewBox: '0 0 75 75',
+    paths: []
+  },
   'scroll-down': {
     viewBox: '0 0 75 75',
     paths: [
