@@ -10,9 +10,8 @@ export default function Header({
 }) {
   return (
     <section className="flex-1 mt-16">
-      {/* <div className="flex flex-col justify-between max-w-xl px-4 mx-auto lg:pt-16 lg:flex-row md:px-8 lg:max-w-screen-xl"> */}
-      <div className="flex justify-between ">
-        <div className="pt-16 mb-10 sm:mb-16 lg:mb-0 lg:pt-32 lg:max-w-lg lg:pr-5 text-center sm:text-left">
+      <div className="flex justify-between">
+        <div className="flex flex-col justify-center w-full mb-10 sm:mb-0 text-center sm:text-left">
           <div className="max-w-xl mb-6">
             <div>
               <p className="inline-block px-4 py-px mb-4 text-xs font-semibold tracking-wider text-success-main uppercase rounded-full bg-success-light">
@@ -25,28 +24,21 @@ export default function Header({
                 {titleSecondary}
               </span>
             </h1>
-            <p className="text-secondary-main text-lg">{desc}</p>
+            <p className="max-w-md text-secondary-main text-lg">{desc}</p>
           </div>
           <div className="flex items-center justify-center sm:justify-start">
             <a
-              href="/"
-              className="inline-flex items-center justify-center h-12 p-7 font-medium text-sm tracking-wide text-white transition duration-200 rounded-lg bg-primary-light hover:bg-primary-light-accent focus:shadow-outline focus:outline-none"
+              href="#early-access-block"
+              className="inline-flex items-center justify-center h-12 p-7 font-medium text-sm tracking-wide text-white transition duration-200 rounded-lg bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
             >
               {ctaBtnText}
             </a>
           </div>
         </div>
-        <div className="hidden lg:block bg-header-blob bg-contain bg-no-repeat">
-          <Image
-            src="/img/header-illust.png"
-            alt="Header illustration"
-            height={600}
-            width={600}
-          />
-        </div>
+        <div className="w-full h-header-img hidden lg:block bg-header-illust bg-contain bg-right bg-no-repeat" />
       </div>
       <div className="w-full flex justify-center items-center">
-        <a href="/">
+        <a href="#features-block">
           <Icon
             name="scroll-down"
             classNameWrapper="w-20 animate-bounce"

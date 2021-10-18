@@ -1,0 +1,2 @@
+export const CORE_FEATURE_ITEM_LEFT_TYPE = 0
+export const CORE_FEATURE_ITEM_RIGHT_TYPE = 1

@@ -10,8 +10,11 @@ module.exports = {
       },
       backgroundImage: {
         'header-blob': "url('/img/header-blob.svg')",
+        'header-illust': "url('/img/header-illust.png')",
         'quote-blob': "url('/img/quote-blob.svg')",
-        'cta-rectangle': "url('/img/cta-rectangle.svg')",
+        'feat-ai-search': "url('/img/feat-ai-search.png')",
+        'feat-database': "url('/img/feat-database.png')",
+        'feat-social': "url('/img/feat-social.svg')",
       },
       colors: {
         common: {
@@ -31,6 +34,9 @@ module.exports = {
           light: '#1de9b6',
         }
       },
+      height: {
+        'header-img': "37.5rem"
+      }
     },
   },
   variants: {

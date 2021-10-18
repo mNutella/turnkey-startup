@@ -40,7 +40,7 @@ export default function Navbar() {
               Features
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               href="#api-block"
               aria-label="Product pricing"
@@ -49,10 +49,10 @@ export default function Navbar() {
             >
               For Developers
             </a>
-          </li>
+          </li> */}
           <li>
             <a
-              href="/"
+              href="#early-access-block"
               className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-secondary-main transition duration-200 rounded-lg hover:bg-secondary-light focus:bg-secondary-light"
               aria-label="Sign up"
               title="Sign up"

@@ -10,7 +10,7 @@ export default function FeaturesListItem({ title, desc, icon }) {
           classNameWrapper="w-14 mx-auto mb-8"
           className="p-1 rounded stroke-current text-primary-main"
         />
-        <h3 className="text-2xl font-medium mb-2">{title}</h3>
+        <h3 className="text-2xl font-normal mb-2">{title}</h3>
         <p className="text-base text-secondary-main line-clamp-4">{desc}</p>
       </div>
     </article>

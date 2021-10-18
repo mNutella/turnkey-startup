@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className="flex-1 px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <footer className="flex-1 px-4 mt-32 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
           <a
@@ -91,14 +91,14 @@ export default function Footer() {
           © Copyright 2021 idea-research. All rights reserved.
         </p>
         <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
-          <li>
+          {/* <li>
             <a
               href="/"
               className="text-sm text-gray-600 transition-colors duration-300 hover:text-primary-light"
             >
               F.A.Q
             </a>
-          </li>
+          </li> */}
           <li>
             <a
               href="/"
@@ -118,5 +118,5 @@ export default function Footer() {
         </ul>
       </div>
     </footer>
-  );
-};
+  )
+}
