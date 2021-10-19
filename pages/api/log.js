@@ -8,6 +8,7 @@ export default async function logHandler(req, res) {
     headers
   } = req
   const ip =
+    headers['x-real-ip'] ||
     (headers['x-forwarded-for'] || '').split(',').pop().trim() ||
     remoteAddress ||
     ''
