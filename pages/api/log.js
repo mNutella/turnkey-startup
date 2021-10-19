@@ -7,9 +7,12 @@ export default async function logHandler(req, res) {
     connection: { remoteAddress },
     headers
   } = req
-  const referral = headers['referral'] || ''
+  const ip =
+    (headers['x-forwarded-for'] || '').split(',').pop().trim() ||
+    remoteAddress ||
+    ''
+  const referer = headers['referer'] || ''
   const userAgent = headers['user-agent'] || ''
-  console.log(remoteAddress, referral, userAgent)
 
   const db = firebaseApp.getInstance()
 
@@ -20,8 +23,8 @@ export default async function logHandler(req, res) {
   if (method === 'POST') {
     try {
       await addLogDocument({
-        ip: remoteAddress || '',
-        referral,
+        ip: ip,
+        referer,
         userAgent,
         date: new Date().toUTCString()
       })

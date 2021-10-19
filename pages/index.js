@@ -96,7 +96,7 @@ export default function Home() {
       <Header
         titlePrimary="Tech"
         titleSecondary="idea research"
-        desc="Identify your real competitors, improve your idea and become a 🦄"
+        desc={`Identify your real competitors, improve your idea and become `}
         ctaBtnText="Request early access"
       />
       <Quote content="So often people are working hard at the wrong thing. Working on the right thing is probably more important than working hard." />

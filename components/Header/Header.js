@@ -23,7 +23,12 @@ export default function Header({
                 {titleSecondary}
               </span>
             </h1>
-            <p className="max-w-md text-secondary-main text-lg">{desc}</p>
+            <h6 className="max-w-md text-secondary-main text-lg">
+              {desc}
+              <span className="inline-block text-2xl">
+                🦄
+              </span>
+            </h6>
           </div>
           <div className="flex items-center justify-center sm:justify-start">
             <a

@@ -20,7 +20,10 @@ export default function CoreFeaturesListItem({ title, desc, img, type }) {
           <h3 className="text-2xl font-medium mb-2 text-primary-main">
             {title}
           </h3>
-          <p className="text-base sm:text-lg text-secondary-main" dangerouslySetInnerHTML={{ __html: desc }}></p>
+          <p
+            className="text-base sm:text-lg text-secondary-main"
+            dangerouslySetInnerHTML={{ __html: desc }}
+          ></p>
         </div>
       </div>
     </div>

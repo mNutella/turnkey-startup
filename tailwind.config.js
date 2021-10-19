@@ -7,14 +7,15 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        body: ['"DM Sans"']
       },
-      backgroundImage: {
+      backgroundImage: (theme) => ({
         'header-illust': "url('/img/header-illust.png')",
         'quote-blob': "url('/img/quote-blob.svg')",
         'feat-ai-search': "url('/img/feat-ai-search.png')",
         'feat-database': "url('/img/feat-database.png')",
         'feat-social': "url('/img/feat-social.svg')",
-      },
+      }),
       colors: {
         common: {
           white: '#f8f8fa',

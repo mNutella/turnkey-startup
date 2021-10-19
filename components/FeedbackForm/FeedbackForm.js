@@ -39,7 +39,6 @@ export default function FeedbackForm({ onSubmit }) {
   const onFormChange = (e) => {
     const name = e.target.name
     const value = e.target.value
-    console.log('value')
 
     if (name in formData) {
       setFormData((values) => ({ ...values, [name]: value }))
@@ -49,14 +48,15 @@ export default function FeedbackForm({ onSubmit }) {
   const onFormSubmit = async (e) => {
     e.preventDefault()
 
-    console.log({
-      ...formData,
-      [FLAG_FIELD_NAME]: flagInputEl.current.value
-    })
     await handleReCaptchaVerify((token) => {
       onSubmit &&
-        onSubmit({ ...formData, [FLAG_FIELD_NAME]: flagInputEl.current.value, token })
+        onSubmit({
+          ...formData,
+          [FLAG_FIELD_NAME]: flagInputEl.current.value,
+          token
+        })
 
+      resetForm()
     })
   }
 
@@ -114,7 +114,10 @@ export default function FeedbackForm({ onSubmit }) {
               className="block text-primary-main font-medium mb-1"
               htmlFor="inline-full-name"
             >
-              Promo <span className="text-red-500 font-normal text-sm">(full flag)</span>
+              Promo{' '}
+              <span className="text-red-500 font-normal text-sm">
+                (full flag)
+              </span>
             </label>
             <input
               className="bg-secondary-light appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
