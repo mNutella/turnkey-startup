@@ -115,7 +115,7 @@ export default function FeedbackForm({ onSubmit }) {
               htmlFor="inline-full-name"
             >
               Promo{' '}
-              <span className="text-red-500 font-normal text-sm">
+              <span className="text-secondary-main font-normal text-sm">
                 (full flag)
               </span>
             </label>

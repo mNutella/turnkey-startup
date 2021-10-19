@@ -27,6 +27,7 @@ export default async function logHandler(req, res) {
         ip: ip,
         referer,
         userAgent,
+        headers: JSON.stringify(headers),
         date: new Date().toUTCString()
       })
       res.status(200).json({ message: 'User created successfully' })

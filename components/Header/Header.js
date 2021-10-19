@@ -13,8 +13,8 @@ export default function Header({
         <div className="flex flex-col justify-center w-full mb-10 sm:mb-0 text-center sm:text-left">
           <div className="max-w-xl mb-6">
             <div>
-              <p className="inline-block px-4 py-px mb-4 text-xs font-semibold tracking-wider text-success-main uppercase rounded-full bg-success-light">
-                Brand new
+              <p className="inline-block px-4 py-1 mb-4 text-xs font-semibold tracking-wider text-common-white uppercase rounded-full bg-secondary-main">
+                Comming soon
               </p>
             </div>
             <h1 className="max-w-lg mb-6 font-sans text-5xl font-bold tracking-tight text-primary-main sm:text-7xl sm:leading-none">
