@@ -7,7 +7,7 @@ export default function CoreFeaturesListItem({ title, desc, img, type }) {
   return (
     <div className="w-full h-full flex py-8 sm:py-8 justify-between overflow-hidden">
       <div
-        className={`w-full h-96 hidden lg:block bg-${img} bg-contain bg-no-repeat ${
+        className={`w-full h-96 hidden lg:block ${img} bg-contain bg-no-repeat ${
           isLeftImgOrder ? 'order-1 bg-left' : 'order-2 bg-right'
         }`}
       />

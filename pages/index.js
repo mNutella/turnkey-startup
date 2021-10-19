@@ -18,19 +18,19 @@ const FEATURES_DATA = {
     {
       title: 'Advanced Search',
       desc: 'AI-based semantic search by logo (image recognition), title, description, categories, tags, ratings, downloads and others. The results contain the degree of similarity, weaknesses and strengths, unique features and much more',
-      img: 'feat-ai-search',
+      img: 'bg-feat-ai-search',
       type: CORE_FEATURE_ITEM_LEFT_TYPE
     },
     {
       title: 'Gigantic Database',
       desc: 'The continuously updated database to provide you the most relevant experience. <br /> Sources: Google Play, Apple Appstore, Amazon Appstore, Steam, Product Hunt, Tech Crunch, Github and others (Web, Desktop and Mobile)',
-      img: 'feat-database',
+      img: 'bg-feat-database',
       type: CORE_FEATURE_ITEM_RIGHT_TYPE
     },
     {
       title: 'Powerful Easy-To-Use API',
       desc: "Access all projects' data, dowloads, ratings, reviews, audiences, appearances, analytics and rankings via our Advanced Search API. Find the projects you're really looking for, subscribe for updates about their new features, and get real-time notifications",
-      img: 'feat-social',
+      img: 'bg-feat-social',
       type: CORE_FEATURE_ITEM_LEFT_TYPE
     }
   ],
