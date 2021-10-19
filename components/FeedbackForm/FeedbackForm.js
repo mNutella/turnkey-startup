@@ -1,19 +1,22 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useRef } from 'react'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 const EMAIL_FIELD_NAME = 'email'
 const PROFESSION_FIELD_NAME = 'profession'
-const SIMILAR_SITES_FIELD_NAME = 'similarSites'
+const MESSAGE_FIELD_NAME = 'message'
+const FLAG_FIELD_NAME = 'flag'
 
 const INIT_FORM_DATA = {
   [EMAIL_FIELD_NAME]: '',
   [PROFESSION_FIELD_NAME]: '',
-  [SIMILAR_SITES_FIELD_NAME]: ''
+  [MESSAGE_FIELD_NAME]: '',
+  [FLAG_FIELD_NAME]: ''
 }
 
 export default function FeedbackForm({ onSubmit }) {
   const { executeRecaptcha } = useGoogleReCaptcha()
   const [formData, setFormData] = useState(INIT_FORM_DATA)
+  const flagInputEl = useRef(null)
 
   const handleReCaptchaVerify = useCallback(
     async (event) => {
@@ -29,9 +32,14 @@ export default function FeedbackForm({ onSubmit }) {
     [executeRecaptcha, formData]
   )
 
+  const resetForm = () => {
+    setFormData(() => INIT_FORM_DATA)
+  }
+
   const onFormChange = (e) => {
     const name = e.target.name
     const value = e.target.value
+    console.log('value')
 
     if (name in formData) {
       setFormData((values) => ({ ...values, [name]: value }))
@@ -40,10 +48,15 @@ export default function FeedbackForm({ onSubmit }) {
 
   const onFormSubmit = async (e) => {
     e.preventDefault()
-    await handleReCaptchaVerify((token) => {
-      onSubmit && onSubmit({ ...formData, token })
 
-      setFormData(() => INIT_FORM_DATA)
+    console.log({
+      ...formData,
+      [FLAG_FIELD_NAME]: flagInputEl.current.value
+    })
+    await handleReCaptchaVerify((token) => {
+      onSubmit &&
+        onSubmit({ ...formData, [FLAG_FIELD_NAME]: flagInputEl.current.value, token })
+
     })
   }
 
@@ -91,7 +104,7 @@ export default function FeedbackForm({ onSubmit }) {
               name={PROFESSION_FIELD_NAME}
               type="text"
               maxLength="20"
-              placeholder="designer / developer / entrepreneur"
+              placeholder="designer / developer / investor"
               value={formData[PROFESSION_FIELD_NAME]}
               onChange={onFormChange}
             />
@@ -101,19 +114,44 @@ export default function FeedbackForm({ onSubmit }) {
               className="block text-primary-main font-medium mb-1"
               htmlFor="inline-full-name"
             >
-              I know similar sites
+              Promo <span className="text-red-500 font-normal text-sm">(full flag)</span>
             </label>
             <input
               className="bg-secondary-light appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
               id="inline-full-name"
-              name={SIMILAR_SITES_FIELD_NAME}
+              name={FLAG_FIELD_NAME}
               type="text"
-              maxLength="20"
-              placeholder="producthunt.com, techcrunch.com, ycombinator.com"
-              value={formData[SIMILAR_SITES_FIELD_NAME]}
+              maxLength="32"
+              placeholder="04cd4558a08b4adda57fcf354146a352"
+              value={formData[FLAG_FIELD_NAME]}
               onChange={onFormChange}
             />
           </div>
+          <div className="mb-6">
+            <label
+              className="block text-primary-main font-medium mb-1"
+              htmlFor="inline-full-name"
+            >
+              Message
+            </label>
+            <textarea
+              className="bg-secondary-light appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
+              id="inline-full-name"
+              name={MESSAGE_FIELD_NAME}
+              type="text"
+              maxLength="256"
+              placeholder="Write something to help us become better. Thank you!"
+              value={formData[MESSAGE_FIELD_NAME]}
+              onChange={onFormChange}
+            />
+          </div>
+          <input
+            ref={flagInputEl}
+            hidden
+            type="text"
+            value={formData[FLAG_FIELD_NAME]}
+            onChange={onFormChange}
+          />
           <div className="">
             <button
               className="w-full inline-flex items-center justify-center h-12 p-8 font-medium text-sm tracking-wide text-common-white transition duration-200 rounded-lg bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"

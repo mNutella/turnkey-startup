@@ -12,15 +12,15 @@ export default function CoreFeaturesListItem({ title, desc, img, type }) {
         }`}
       />
       <div
-        className={`w-full h-auto flex flex-col justify-center ${
+        className={`w-full h-auto flex flex-col justify-center text-center sm:text-left ${
           isLeftImgOrder ? 'order-2 items-end' : 'order-1 items-start'
         }`}
       >
-        <div className="max-w-md overflow-ellipsis">
+        <div className="max-w-md">
           <h3 className="text-2xl font-medium mb-2 text-primary-main">
             {title}
           </h3>
-          <p className="text-base text-secondary-main line-clamp-6">{desc}</p>
+          <p className="text-base sm:text-lg text-secondary-main" dangerouslySetInnerHTML={{ __html: desc }}></p>
         </div>
       </div>
     </div>

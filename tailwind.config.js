@@ -9,7 +9,6 @@ module.exports = {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
-        'header-blob': "url('/img/header-blob.svg')",
         'header-illust': "url('/img/header-illust.png')",
         'quote-blob': "url('/img/quote-blob.svg')",
         'feat-ai-search': "url('/img/feat-ai-search.png')",

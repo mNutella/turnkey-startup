@@ -16,69 +16,69 @@ const FEATURES_DATA = {
   subtitle: 'More',
   coreFeatures: [
     {
-      title: 'AI Search',
-      desc: 'AI-based semantic search by logo (image recognition), title, description, categories, tags, ratings, downloads and others. Results contain similarity rate, weaknesses and strengths, unique features and more.',
+      title: 'Advanced Search',
+      desc: 'AI-based semantic search by logo (image recognition), title, description, categories, tags, ratings, downloads and others. The results contain the degree of similarity, weaknesses and strengths, unique features and much more',
       img: 'feat-ai-search',
       type: CORE_FEATURE_ITEM_LEFT_TYPE
     },
     {
-      title: 'Database',
-      desc: 'Most complete database is continuously updated to provide the most actual experience. Sources: Google Play, Apple Appstore, Amazon Appstore, Steam, Product Hunt, Tech Crunch, Github and other platforms (Web, Desktop and Mobile).',
+      title: 'Gigantic Database',
+      desc: 'The continuously updated database to provide you the most relevant experience. <br /> Sources: Google Play, Apple Appstore, Amazon Appstore, Steam, Product Hunt, Tech Crunch, Github and others (Web, Desktop and Mobile)',
       img: 'feat-database',
       type: CORE_FEATURE_ITEM_RIGHT_TYPE
     },
     {
-      title: 'Easy API integration',
-      desc: 'Access all apps’ meta-data, insights and audiences from app marketplaces, product platforms and online newspapers via our Advanced Search API. File dumps allows you to ingest a large scale of data.',
+      title: 'Powerful Easy-To-Use API',
+      desc: "Access all projects' data, dowloads, ratings, reviews, audiences, appearances, analytics and rankings via our Advanced Search API. Find the projects you're really looking for, subscribe for updates about their new features, and get real-time notifications",
       img: 'feat-social',
       type: CORE_FEATURE_ITEM_LEFT_TYPE
     }
   ],
   features: [
     {
-      title: 'Compatitors’ online presence',
-      desc: 'Official website, social media platforms, blogs, white papers',
-      icon: ''
+      title: 'Compatitors’ Online Presence',
+      desc: 'Official website, social media, blogs, white papers',
+      icon: 'online-presence'
     },
     {
       title: 'Statistics',
-      desc: 'Get all metadata including reviews, monetization model and more',
-      icon: ''
+      desc: 'Get all the metadata including reviews, monetization model and much more',
+      icon: 'statistics'
     },
     {
       title: 'Analytics',
-      desc: 'Analyze compatitors’ strengths and weaknesses, unique features, keyword stats, visibility leaderboards',
-      icon: ''
+      desc: 'Analyze the strengths and weaknesses of compatitors, their unique features',
+      icon: 'analytics'
     },
     {
-      title: 'Prediction',
-      desc: 'Estimation of idea complexity, time and budget',
-      icon: ''
+      title: 'Estimation',
+      desc: 'Estimation of the idea complexity, time complexity and budget',
+      icon: 'estimation'
     },
     {
-      title: 'Compatitors’ changelog',
+      title: 'Compatitors’ Changelog',
       desc: 'Follow your competitors’ updates and get notifications',
-      icon: ''
+      icon: 'logs'
     },
     {
-      title: 'Export data',
-      desc: 'View all available metadata for each app. Export the data as a CSV or through our API',
-      icon: ''
+      title: 'Export Data',
+      desc: 'Export all available metadata as CSVs or file dumps',
+      icon: 'export'
     },
     {
-      title: '20+ languages',
-      desc: 'Filter searches by country and language availability',
-      icon: ''
+      title: '20+ Languages',
+      desc: 'Filter the search by country and language availability',
+      icon: 'languages'
     },
     {
-      title: 'Idea inspiration',
-      desc: 'Suggestions based on actual problems, world trends and popular products',
-      icon: ''
+      title: 'Idea Inspiration',
+      desc: 'Suggestions based on current global issues, global trends and popular products',
+      icon: 'inspiration'
     },
     {
-      title: 'Trending / Rankings',
-      desc: 'See the idea appearance, ranking the worldwide, trendings, category leaderboards',
-      icon: ''
+      title: 'Ratings',
+      desc: "See the idea's appearance and visibility, worldwide ranking and category leaderboards",
+      icon: 'ratings'
     }
   ]
 }
@@ -94,12 +94,12 @@ export default function Home() {
     <div className="flex flex-col px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <Navbar />
       <Header
-        titlePrimary="One-click"
+        titlePrimary="Tech"
         titleSecondary="idea research"
-        desc="Identify your real competitors, improve your idea and go to the moon"
+        desc="Identify your real competitors, improve your idea and become a 🦄"
         ctaBtnText="Request early access"
       />
-      <Quote />
+      <Quote content="So often people are working hard at the wrong thing. Working on the right thing is probably more important than working hard." />
       <Features
         title={FEATURES_DATA.title}
         subtitle={FEATURES_DATA.subtitle}
