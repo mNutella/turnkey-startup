@@ -64,7 +64,7 @@ export default function FeedbackForm({ onSubmit }) {
     <div id="early-access-block" className="mt-16">
       <div className="w-full mx-auto mb-16 text-center">
         <h1 className="text-5xl sm:text-6xl font-medium text-primary-main">
-          Early access
+          Request early access
         </h1>
       </div>
       <form
@@ -157,7 +157,7 @@ export default function FeedbackForm({ onSubmit }) {
           />
           <div className="">
             <button
-              className="w-full inline-flex items-center justify-center h-12 p-8 font-medium text-sm tracking-wide text-common-white transition duration-200 rounded-lg bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
+              className="w-full inline-flex items-center justify-center p-5 font-medium text-sm tracking-wide text-common-white transition duration-200 rounded-lg bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
               type="submit"
             >
               Request

@@ -18,16 +18,15 @@ export default function Header({
               </p>
             </div>
             <h1 className="max-w-lg mb-6 font-sans text-5xl font-bold tracking-tight text-primary-main sm:text-7xl sm:leading-none">
-              {titlePrimary}{' '}
+              Your tech{' '}
               <span className="inline-block text-primary-light">
-                {titleSecondary}
+                idea research
               </span>
             </h1>
             <h6 className="max-w-md text-secondary-main text-lg">
-              {desc}
-              <span className="inline-block text-2xl">
-                🦄
-              </span>
+              Identify your real competitors, improve your idea and become a{' '}
+              <span className="inline-block text-2xl">🦄</span>{'  '}
+              startup
             </h6>
           </div>
           <div className="flex items-center justify-center sm:justify-start">
@@ -35,7 +34,7 @@ export default function Header({
               href="#early-access-block"
               className="inline-flex items-center justify-center h-12 p-7 font-medium text-sm tracking-wide text-white transition duration-200 rounded-lg bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
             >
-              {ctaBtnText}
+              Request early access
             </a>
           </div>
         </div>

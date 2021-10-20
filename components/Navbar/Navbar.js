@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { useState } from 'react'
 
 export default function Navbar() {
@@ -8,28 +9,11 @@ export default function Navbar() {
       <div className="relative flex items-center justify-between">
         <a
           href="/"
-          aria-label="Company"
-          title="Company"
+          aria-label="Go home"
+          title="ideasy"
           className="inline-flex items-center"
         >
-          <svg
-            className="w-8 text-primary-light"
-            viewBox="0 0 24 24"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeMiterlimit="10"
-            stroke="currentColor"
-            fill="none"
-          >
-            <rect x="3" y="1" width="7" height="12"></rect>
-            <rect x="3" y="17" width="7" height="6"></rect>
-            <rect x="14" y="1" width="7" height="6"></rect>
-            <rect x="14" y="11" width="7" height="12"></rect>
-          </svg>
-          <span className="ml-2 text-xl font-bold tracking-wide text-primary-main uppercase">
-            Company
-          </span>
+          <Image src="/logo.svg" width={150} height={50} />
         </a>
         <ul className="hidden items-center space-x-8 lg:flex">
           <li>
@@ -92,7 +76,7 @@ export default function Navbar() {
             </button>
           )}
           <nav
-            className={`absolute top-10 left-0 w-full p-5 text-center bg-common-white border rounded ${
+            className={`absolute top-12 left-0 w-full p-5 text-center bg-common-white border rounded ${
               !isMenuShow && 'hidden'
             }`}
           >
@@ -102,7 +86,7 @@ export default function Navbar() {
                   href="#features-block"
                   aria-label="Features"
                   title="Features"
-                  className="font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light"
+                  className="p-2 font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light"
                   onClick={() => setMenuShow(false)}
                 >
                   Features
@@ -111,9 +95,9 @@ export default function Navbar() {
               <li>
                 <a
                   href="#early-access-block"
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-secondary-main transition duration-200 rounded-lg hover:bg-secondary-light focus:bg-secondary-light"
-                  aria-label="Request early access"
-                  title="Request early access"
+                  aria-label="Features"
+                  title="Features"
+                  className="p-2 font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light"
                   onClick={() => setMenuShow(false)}
                 >
                   Request early access

@@ -10,6 +10,7 @@ import {
   CORE_FEATURE_ITEM_RIGHT_TYPE
 } from '../constants/features-block'
 import useLocalAPI from '../hooks/useLocalAPI'
+import useUrlHelper from '../hooks/useUrlHelper'
 
 const FEATURES_DATA = {
   title: 'Features',
@@ -84,21 +85,18 @@ const FEATURES_DATA = {
 }
 
 export default function Home() {
+  const urlHelper = useUrlHelper()
   const localAPI = useLocalAPI()
 
   useEffect(() => {
-    ;(async () => await localAPI.createLog())()
+    const params = urlHelper.getParams()
+    ;(async () => await localAPI.createLog(params.get('ref')))()
   }, [])
 
   return (
     <div className="flex flex-col px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <Navbar />
-      <Header
-        titlePrimary="Tech"
-        titleSecondary="idea research"
-        desc={`Identify your real competitors, improve your idea and become `}
-        ctaBtnText="Request early access"
-      />
+      <Header />
       <Quote
         content="So often people are working hard at the wrong thing. Working on the right thing is probably more important than working hard."
         author="Caterina Fake, Flickr co-founder"

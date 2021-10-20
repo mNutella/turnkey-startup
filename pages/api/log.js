@@ -4,6 +4,7 @@ import firebaseApp from '../../lib/firebase-client'
 export default async function logHandler(req, res) {
   const {
     method,
+    body: { ref = '' },
     connection: { remoteAddress },
     headers
   } = req
@@ -12,7 +13,6 @@ export default async function logHandler(req, res) {
     (headers['x-forwarded-for'] || '').split(',').pop().trim() ||
     remoteAddress ||
     ''
-  const referer = headers['referer'] || ''
   const userAgent = headers['user-agent'] || ''
 
   const db = firebaseApp.getInstance()
@@ -25,12 +25,11 @@ export default async function logHandler(req, res) {
     try {
       await addLogDocument({
         ip: ip,
-        referer,
+        referer: ref,
         userAgent,
-        headers: JSON.stringify(headers),
         date: new Date().toUTCString()
       })
-      res.status(200).json({ message: 'User created successfully' })
+      res.status(200).json('Logged successfully')
     } catch (error) {
       res.status(500).end('Something went wrong')
     }

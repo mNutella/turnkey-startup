@@ -8,8 +8,8 @@ export default function useLocalAPI() {
     return content
   }
 
-  const createLog = async () => {
-    const content = await request(API_ANALYTICS_ROUTE)
+  const createLog = async (ref) => {
+    const content = await request(API_ANALYTICS_ROUTE, ref && { ref })
 
     return content
   }
