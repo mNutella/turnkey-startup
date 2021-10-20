@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 export default function Navbar() {
@@ -7,21 +8,22 @@ export default function Navbar() {
   return (
     <div className="flex-1 sticky top-0 py-2 bg-common-white z-10">
       <div className="relative flex items-center justify-between">
-        <a
-          href="/"
-          aria-label="Go home"
-          title="ideasy"
-          className="inline-flex items-center"
-        >
-          <Image src="/logo.svg" width={150} height={50} />
-        </a>
+        <Link href="/">
+          <a
+            aria-label="Go home"
+            title="ideasy"
+            className="inline-flex items-center"
+          >
+            <Image src="/logo.svg" width={150} height={50} />
+          </a>
+        </Link>
         <ul className="hidden items-center space-x-8 lg:flex">
           <li>
             <a
               href="#features-block"
               aria-label="Features"
               title="Features"
-              className="font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light"
+              className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light"
             >
               Features
             </a>
@@ -29,9 +31,9 @@ export default function Navbar() {
           <li>
             <a
               href="#early-access-block"
-              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-secondary-main transition duration-200 rounded-lg hover:bg-secondary-light focus:bg-secondary-light"
               aria-label="Request early access"
               title="Request early access"
+              className="text-lg inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-secondary-main transition duration-200 rounded-lg hover:bg-secondary-light focus:bg-secondary-light"
             >
               Request early access
             </a>

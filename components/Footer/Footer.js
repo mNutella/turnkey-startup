@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function Footer() {
@@ -6,27 +7,28 @@ export default function Footer() {
     <footer className="flex-1 px-4 mt-32 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
-          <a
-            href="/"
-            aria-label="Go home"
-            title="ideasy"
-            className="inline-flex items-center"
-          >
-            <Image src="/logo.svg" width={150} height={50} />
-          </a>
+          <Link href="/">
+            <a
+              aria-label="Go home"
+              title="ideasy"
+              className="inline-flex items-center"
+            >
+              <Image src="/logo.svg" width={150} height={50} />
+            </a>
+          </Link>
           <div className="mt-6 lg:max-w-sm">
-            <p className="text-sm text-primary-main">
+            <p className="text-base text-primary-main">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam.
             </p>
-            <p className="mt-4 text-sm text-primary-main">
+            <p className="mt-4 text-base text-primary-main">
               Eaque ipsa quae ab illo inventore veritatis et quasi architecto
               beatae vitae dicta sunt explicabo.
             </p>
           </div>
         </div>
-        <div className="space-y-2 text-sm">
-          <p className="text-base font-bold tracking-wide text-primary-main">
+        <div className="space-y-2 text-base">
+          <p className="text-lg font-bold tracking-wide text-primary-main">
             Contacts
           </p>
           <div className="flex">
@@ -35,14 +37,14 @@ export default function Footer() {
               href="mailto:pr.idearesearch@gmail.com"
               aria-label="Our email"
               title="Our email"
-              className="transition-colors duration-300 text-primary-light hover:text-deep-purple-800"
+              className="transition-colors duration-300 text-primary-light hover:text-blue-400"
             >
               pr.idearesearch@gmail.com
             </a>
           </div>
         </div>
         <div>
-          <span className="text-base font-bold tracking-wide text-primary-main">
+          <span className="text-lg font-bold tracking-wide text-primary-main">
             Social
           </span>
           <div className="flex items-center mt-1 space-x-3">
@@ -56,32 +58,30 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-          <p className="mt-4 text-sm text-secondary-main">
+          <p className="mt-4 text-base text-secondary-main">
             Bacon ipsum dolor amet short ribs pig sausage prosciutto chicken
             spare ribs salami.
           </p>
         </div>
       </div>
       <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
-        <p className="text-sm text-gray-600">
+        <p className="text-base text-gray-600">
           © Copyright 2021 idea-research. All rights reserved.
         </p>
         <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
           <li>
-            <a
-              href="/"
-              className="text-sm text-gray-600 transition-colors duration-300 hover:text-primary-light"
-            >
-              Privacy Policy
-            </a>
+            <Link href="/en/privacy">
+              <a className="text-base text-gray-600 transition-colors duration-300 hover:text-primary-light">
+                Privacy Policy
+              </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/"
-              className="text-sm text-gray-600 transition-colors duration-300 hover:text-primary-light"
-            >
-              Terms &amp; Conditions
-            </a>
+            <Link href="/en/terms">
+              <a className="text-base text-gray-600 transition-colors duration-300 hover:text-primary-light">
+                Terms &amp; Conditions
+              </a>
+            </Link>
           </li>
         </ul>
       </div>

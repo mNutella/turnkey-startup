@@ -29,7 +29,7 @@ export default async function userHandler(req, res) {
     try {
       const isPromo = flag === process.env.NEXT_PUBLIC_CTF_FLAG;
       await addUserDocument({ email, profession, message, promo: isPromo, date: new Date().toUTCString() })
-      res.status(200).json(!isPromo ? 'Successfully added without promo' : 'Successfully added with promo')
+      res.status(200).json({ message: !isPromo ? 'Successfully added without promo' : 'Successfully added with promo' })
     } catch (error) {
       res.status(500).end('Something went wrong')
     }

@@ -16,6 +16,7 @@ const INIT_FORM_DATA = {
 export default function FeedbackForm({ onSubmit }) {
   const { executeRecaptcha } = useGoogleReCaptcha()
   const [formData, setFormData] = useState(INIT_FORM_DATA)
+  const [formResult, setFormResult] = useState('')
   const flagInputEl = useRef(null)
 
   const handleReCaptchaVerify = useCallback(
@@ -40,6 +41,8 @@ export default function FeedbackForm({ onSubmit }) {
     const name = e.target.name
     const value = e.target.value
 
+    !formResult && setFormResult('')
+
     if (name in formData) {
       setFormData((values) => ({ ...values, [name]: value }))
     }
@@ -48,13 +51,16 @@ export default function FeedbackForm({ onSubmit }) {
   const onFormSubmit = async (e) => {
     e.preventDefault()
 
-    await handleReCaptchaVerify((token) => {
-      onSubmit &&
-        onSubmit({
-          ...formData,
-          [FLAG_FIELD_NAME]: flagInputEl.current.value,
-          token
-        })
+    await handleReCaptchaVerify(async (token) => {
+      const { message } = await onSubmit({
+        ...formData,
+        [FLAG_FIELD_NAME]: flagInputEl.current.value,
+        token
+      })
+
+      if (message.includes('Successfully')) {
+        setFormResult(message)
+      }
 
       resetForm()
     })
@@ -71,98 +77,110 @@ export default function FeedbackForm({ onSubmit }) {
         className="w-full p-4 sm:p-8 border-4 rounded-lg border-secondary-light"
         onSubmit={onFormSubmit}
       >
-        <div className="max-w-md sm:mx-auto">
-          <div className="mb-6">
-            <label
-              className="block text-primary-main font-medium mb-1"
-              htmlFor="inline-full-name"
-            >
-              Email <span className="text-red-500 font-normal">*</span>
-            </label>
+        {formResult && (
+          <h4 className="text-3xl text-center mb-2 text-primary-main animate-fadeIn">
+            🎉 {formResult} 🎉
+          </h4>
+        )}
+        <div className="flex items-center justify-center lg:space-x-5">
+          <div className="w-full lg:w-1/2">
+            <div className="mb-6">
+              <label
+                className="block text-base sm:text-lg text-primary-main font-medium mb-1"
+                htmlFor="inline-full-name"
+              >
+                Email <span className="text-red-500 font-normal">*</span>
+              </label>
+              <input
+                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
+                id="inline-full-name"
+                required
+                name={EMAIL_FIELD_NAME}
+                type="email"
+                placeholder="idea-research@gmail.com"
+                value={formData[EMAIL_FIELD_NAME]}
+                onChange={onFormChange}
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                className="block text-base sm:text-lg text-primary-main font-medium mb-1"
+                htmlFor="inline-full-name"
+              >
+                You are <span className="text-red-500 font-normal">*</span>
+              </label>
+              <input
+                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
+                id="inline-full-name"
+                required
+                name={PROFESSION_FIELD_NAME}
+                type="text"
+                maxLength="20"
+                placeholder="designer / developer / investor"
+                value={formData[PROFESSION_FIELD_NAME]}
+                onChange={onFormChange}
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                className="block text-base sm:text-lg text-primary-main font-medium mb-1"
+                htmlFor="inline-full-name"
+              >
+                Occupation{' '}
+                <span className="text-secondary-main font-normal text-sm">
+                  (full flag)
+                </span>
+              </label>
+              <input
+                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
+                id="inline-full-name"
+                name={FLAG_FIELD_NAME}
+                type="text"
+                maxLength="32"
+                placeholder="04cd4558a08b4adda57fcf354146a352"
+                value={formData[FLAG_FIELD_NAME]}
+                onChange={onFormChange}
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                className="block text-base sm:text-lg text-primary-main font-medium mb-1"
+                htmlFor="inline-full-name"
+              >
+                Message
+              </label>
+              <textarea
+                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
+                id="inline-full-name"
+                name={MESSAGE_FIELD_NAME}
+                type="text"
+                maxLength="256"
+                placeholder="Write something to help us become better. Thank you!"
+                value={formData[MESSAGE_FIELD_NAME]}
+                onChange={onFormChange}
+              />
+            </div>
             <input
-              className="bg-secondary-light appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
-              id="inline-full-name"
-              required
-              name={EMAIL_FIELD_NAME}
-              type="email"
-              placeholder="idea-research@gmail.com"
-              value={formData[EMAIL_FIELD_NAME]}
-              onChange={onFormChange}
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              className="block text-primary-main font-medium mb-1"
-              htmlFor="inline-full-name"
-            >
-              You are <span className="text-red-500 font-normal">*</span>
-            </label>
-            <input
-              className="bg-secondary-light appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
-              id="inline-full-name"
-              required
-              name={PROFESSION_FIELD_NAME}
+              ref={flagInputEl}
+              hidden
               type="text"
-              maxLength="20"
-              placeholder="designer / developer / investor"
-              value={formData[PROFESSION_FIELD_NAME]}
-              onChange={onFormChange}
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              className="block text-primary-main font-medium mb-1"
-              htmlFor="inline-full-name"
-            >
-              Promo{' '}
-              <span className="text-secondary-main font-normal text-sm">
-                (full flag)
-              </span>
-            </label>
-            <input
-              className="bg-secondary-light appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
-              id="inline-full-name"
-              name={FLAG_FIELD_NAME}
-              type="text"
-              maxLength="32"
-              placeholder="04cd4558a08b4adda57fcf354146a352"
               value={formData[FLAG_FIELD_NAME]}
               onChange={onFormChange}
             />
+            <div className="">
+              <button
+                className="w-full inline-flex items-center justify-center p-5 text-base font-medium tracking-wide text-common-white transition duration-200 rounded-lg bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
+                type="submit"
+              >
+                Request
+              </button>
+            </div>
           </div>
-          <div className="mb-6">
-            <label
-              className="block text-primary-main font-medium mb-1"
-              htmlFor="inline-full-name"
-            >
-              Message
-            </label>
-            <textarea
-              className="bg-secondary-light appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
-              id="inline-full-name"
-              name={MESSAGE_FIELD_NAME}
-              type="text"
-              maxLength="256"
-              placeholder="Write something to help us become better. Thank you!"
-              value={formData[MESSAGE_FIELD_NAME]}
-              onChange={onFormChange}
-            />
-          </div>
-          <input
-            ref={flagInputEl}
-            hidden
-            type="text"
-            value={formData[FLAG_FIELD_NAME]}
-            onChange={onFormChange}
+          <div
+            className={`w-1/2 animate-fadeIn h-header-img hidden lg:block ${
+              !formResult ? 'bg-form-def' : 'bg-form-success'
+            } bg-contain bg-center bg-no-repeat`}
           />
-          <div className="">
-            <button
-              className="w-full inline-flex items-center justify-center p-5 font-medium text-sm tracking-wide text-common-white transition duration-200 rounded-lg bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
-              type="submit"
-            >
-              Request
-            </button>
-          </div>
         </div>
       </form>
     </div>

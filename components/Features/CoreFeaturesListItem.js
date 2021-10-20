@@ -17,11 +17,11 @@ export default function CoreFeaturesListItem({ title, desc, img, type }) {
         }`}
       >
         <div className="max-w-md">
-          <h3 className="text-2xl font-medium mb-2 text-primary-main">
+          <h3 className="text-3xl font-medium mb-2 text-primary-main">
             {title}
           </h3>
           <p
-            className="text-base sm:text-lg text-secondary-main"
+            className="text-lg sm:text-xl text-secondary-main"
             dangerouslySetInnerHTML={{ __html: desc }}
           ></p>
         </div>
