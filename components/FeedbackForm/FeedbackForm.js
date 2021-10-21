@@ -41,7 +41,7 @@ export default function FeedbackForm({ onSubmit }) {
     const name = e.target.name
     const value = e.target.value
 
-    !formResult && setFormResult('')
+    formResult && setFormResult('')
 
     if (name in formData) {
       setFormData((values) => ({ ...values, [name]: value }))
@@ -68,15 +68,15 @@ export default function FeedbackForm({ onSubmit }) {
 
   return (
     <div id="early-access-block" className="mt-16">
-      <div className="w-full mx-auto mb-16 text-center">
-        <h1 className="text-5xl sm:text-6xl font-medium text-primary-main">
-          Request early access
-        </h1>
-      </div>
       <form
         className="w-full p-4 sm:p-8 border-4 rounded-lg border-secondary-light"
         onSubmit={onFormSubmit}
       >
+        <div className="w-full mx-auto mb-16 text-center">
+          <h1 className="text-5xl sm:text-6xl font-medium text-primary-main">
+            Request early access
+          </h1>
+        </div>
         {formResult && (
           <h4 className="text-3xl text-center mb-2 text-primary-main animate-fadeIn">
             🎉 {formResult} 🎉
@@ -107,7 +107,7 @@ export default function FeedbackForm({ onSubmit }) {
                 className="block text-base sm:text-lg text-primary-main font-medium mb-1"
                 htmlFor="inline-full-name"
               >
-                You are <span className="text-red-500 font-normal">*</span>
+                Occupation <span className="text-red-500 font-normal">*</span>
               </label>
               <input
                 className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
@@ -126,7 +126,7 @@ export default function FeedbackForm({ onSubmit }) {
                 className="block text-base sm:text-lg text-primary-main font-medium mb-1"
                 htmlFor="inline-full-name"
               >
-                Occupation{' '}
+                Promo{' '}
                 <span className="text-secondary-main font-normal text-sm">
                   (full flag)
                 </span>

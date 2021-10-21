@@ -14,7 +14,7 @@ export default function Header() {
             </div>
             <h1 className="max-w-lg mb-6 text-5xl font-bold tracking-tight text-primary-main sm:text-7xl sm:leading-none">
               Your tech{' '}
-              <span className="inline-block text-primary-light">
+              <span className="inline-block text-success-dark">
                 idea research
               </span>
             </h1>

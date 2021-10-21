@@ -23,13 +23,14 @@ export default async function userHandler(req, res) {
     const recaptchaStatus = await verifyReacaptcha(token)
 
     if (!recaptchaStatus) {
-      res.status(400).end('Recaptcha was incorrected')
+      res.status(400).end('Recaptcha was incorrect')
+      return
     }
 
     try {
       const isPromo = flag === process.env.NEXT_PUBLIC_CTF_FLAG;
       await addUserDocument({ email, profession, message, promo: isPromo, date: new Date().toUTCString() })
-      res.status(200).json({ message: !isPromo ? 'Successfully added without promo' : 'Successfully added with promo' })
+      res.status(200).json({ message: !isPromo ? 'Successfully sent' : 'Successfully sent with promo' })
     } catch (error) {
       res.status(500).end('Something went wrong')
     }

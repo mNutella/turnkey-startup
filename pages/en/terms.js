@@ -8,7 +8,16 @@ export default function Privacy() {
 
       <p className="mb-2">
         These terms and conditions outline the rules and regulations for the use
-        of Idea Research's Website, located at www.idea-research.com.
+        of Idea Research's Website, located at
+        <a
+          href="https://www.idea-research.com"
+          rel="external nofollow noopener"
+          target="_blank"
+          className="text-primary-light hover:text-blue-400"
+        >
+          www.idea-research.com
+        </a>
+        .
       </p>
 
       <p className="mb-2">

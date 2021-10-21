@@ -54,11 +54,12 @@ module.exports = {
         },
         secondary: {
           main: '#a1a1b0',
-          light: '#efeff6'
+          light: '#e8e8ef'
         },
         success: {
           main: '#004d40',
-          light: '#1de9b6'
+          light: '#1de9b6',
+          dark: '#ec615b'
         }
       },
       height: {
