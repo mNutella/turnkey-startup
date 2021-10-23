@@ -14,6 +14,7 @@ module.exports = {
         'quote-blob': "url('/img/quote-brash.svg')",
         'feat-ai-search': "url('/img/feat-ai-search.svg')",
         'feat-database': "url('/img/feat-database.svg')",
+        'feat-dashboard': "url('/img/feat-dashboard.svg')",
         'feat-social': "url('/img/feat-social.svg')",
         'form-def': "url('/img/form-def.svg')",
         'form-success': "url('/img/form-success.svg')"
@@ -54,7 +55,7 @@ module.exports = {
         },
         secondary: {
           main: '#a1a1b0',
-          light: '#e8e8ef'
+          light: '#f0f0f4'
         },
         success: {
           main: '#004d40',

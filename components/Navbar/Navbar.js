@@ -20,12 +20,32 @@ export default function Navbar() {
         <ul className="hidden items-center space-x-8 lg:flex">
           <li>
             <a
+              href="#use-us-block"
+              aria-label="Use Us"
+              title="Use Us"
+              className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
+            >
+              Use Us
+            </a>
+          </li>
+          <li>
+            <a
               href="#features-block"
               aria-label="Features"
               title="Features"
-              className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light"
+              className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
             >
               Features
+            </a>
+          </li>
+          <li>
+            <a
+              href="#faq-block"
+              aria-label="FAQ"
+              title="FAQ"
+              className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
+            >
+              FAQ
             </a>
           </li>
           <li>
@@ -33,7 +53,7 @@ export default function Navbar() {
               href="#early-access-block"
               aria-label="Request early access"
               title="Request early access"
-              className="text-lg inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-secondary-main transition duration-200 rounded-lg hover:bg-secondary-light focus:bg-secondary-light"
+              className="text-lg inline-flex items-center justify-center h-12 px-6 font-medium rounded-full tracking-wide text-secondary-main transition duration-200 hover:bg-primary-light-accent hover:text-common-white focus:outline-none focus:bg-primary-light-accent focus:text-common-white"
             >
               Request early access
             </a>
@@ -44,7 +64,7 @@ export default function Navbar() {
             <button
               aria-label="Open Menu"
               title="Open Menu"
-              className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-secondary-light focus:bg-secondary-light"
+              className="p-2 -mr-1 transition duration-200 rounded-xl focus:outline-none focus:shadow-outline hover:bg-secondary-light focus:bg-secondary-light"
               onClick={() => setMenuShow(true)}
             >
               <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
@@ -66,7 +86,7 @@ export default function Navbar() {
             <button
               aria-label="Close Menu"
               title="Close Menu"
-              className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-secondary-light focus:bg-secondary-light"
+              className="p-2 -mr-1 transition duration-200 rounded-xl focus:outline-none focus:shadow-outline hover:bg-secondary-light focus:bg-secondary-light"
               onClick={() => setMenuShow(false)}
             >
               <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
@@ -78,17 +98,28 @@ export default function Navbar() {
             </button>
           )}
           <nav
-            className={`absolute top-12 left-0 w-full p-5 text-center bg-common-white border rounded ${
+            className={`absolute top-12 left-0 w-full p-5 text-center bg-common-white border rounded-xl ${
               !isMenuShow && 'hidden'
             }`}
           >
             <ul className="space-y-4">
               <li>
                 <a
+                  href="#use-us-block"
+                  aria-label="Use Us"
+                  title="Use Us"
+                  className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
+                  onClick={() => setMenuShow(false)}
+                >
+                  Use Us
+                </a>
+              </li>
+              <li>
+                <a
                   href="#features-block"
                   aria-label="Features"
                   title="Features"
-                  className="p-2 font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light"
+                  className="p-2 font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
                   onClick={() => setMenuShow(false)}
                 >
                   Features
@@ -96,10 +127,21 @@ export default function Navbar() {
               </li>
               <li>
                 <a
+                  href="#faq-block"
+                  aria-label="FAQ"
+                  title="FAQ"
+                  className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
+                  onClick={() => setMenuShow(false)}
+                >
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a
                   href="#early-access-block"
                   aria-label="Features"
                   title="Features"
-                  className="p-2 font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light"
+                  className="p-2 font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
                   onClick={() => setMenuShow(false)}
                 >
                   Request early access

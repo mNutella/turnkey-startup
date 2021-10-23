@@ -3,7 +3,7 @@ import CoreFeaturesListItem from './CoreFeaturesListItem'
 
 export default function CoreFeaturesList({ items }) {
   return (
-    <div className="flex flex-wrap px-5 overflow-hidden">
+    <div className="flex flex-wrap -mb-16 overflow-hidden">
       {items &&
         !!items.length &&
         items.map((item, index) => (

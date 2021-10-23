@@ -6,12 +6,13 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link
             href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap"
             rel="stylesheet"
           />
-          <link rel="manifest" href="/static/site.webmanifest" />
+          <link rel="manifest" href="/site.webmanifest" />
+          <title>ideasy</title>
         </Head>
         <body className="font-body">
           <Main />

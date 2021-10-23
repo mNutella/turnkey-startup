@@ -1,19 +1,25 @@
 import { collection, addDoc } from 'firebase/firestore/lite'
+import { getIp } from '../../helper/functions'
+import { BLACK_LIST_TEXT_ERROR } from '../../constants/errors'
+import ApiLimiter from '../../lib/api-limiter'
 import firebaseApp from '../../lib/firebase-client'
+
+const apiLimiter = new ApiLimiter()
 
 export default async function logHandler(req, res) {
   const {
     method,
+    connection,
+    headers,
     body: { ref = '' },
-    connection: { remoteAddress },
-    headers
   } = req
-  const ip =
-    headers['x-real-ip'] ||
-    (headers['x-forwarded-for'] || '').split(',').pop().trim() ||
-    remoteAddress ||
-    ''
+  const ip = getIp(headers, connection)
   const userAgent = headers['user-agent'] || ''
+
+  if (apiLimiter.isInBlackList(ip))
+    return res.status(403).end(BLACK_LIST_TEXT_ERROR)
+
+  apiLimiter.updateRequestLimit(ip)
 
   const db = firebaseApp.getInstance()
 
@@ -25,7 +31,7 @@ export default async function logHandler(req, res) {
     try {
       await addLogDocument({
         ip: ip,
-        referer: ref,
+        ref: ref,
         userAgent,
         date: new Date().toUTCString()
       })

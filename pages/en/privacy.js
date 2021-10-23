@@ -105,7 +105,16 @@ export default function Privacy() {
         </li>
         <li>
           <p className="mb-2">
-            <strong>Idea Research</strong> means www.idea-research.com.
+            <strong>Idea Research</strong> means{' '}
+            <a
+              href="https://www.idea-research.com"
+              rel="external nofollow noopener"
+              target="_blank"
+              className="text-primary-light hover:text-blue-400"
+            >
+              www.idea-research.com
+            </a>
+            .
           </p>
         </li>
       </ul>

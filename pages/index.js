@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
+import CTA from '../components/CTA'
+import FAQ from '../components/FAQ'
 import Features from '../components/Features'
+import FeedbackForm from '../components/FeedbackForm'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
-import Quote from '../components/Quote'
-import FeedbackForm from '../components/FeedbackForm'
+import WhyWe from '../components/WhyWe'
 import {
   CORE_FEATURE_ITEM_LEFT_TYPE,
   CORE_FEATURE_ITEM_RIGHT_TYPE
@@ -12,10 +14,9 @@ import {
 import useLocalAPI from '../hooks/useLocalAPI'
 import useUrlHelper from '../hooks/useUrlHelper'
 
-const FEATURES_DATA = {
-  title: 'Features',
-  subtitle: 'More',
-  coreFeatures: [
+const WHY_WE_DATA = {
+  title: 'Use Us For',
+  items: [
     {
       title: 'Advanced Search',
       desc: 'AI-based semantic search by logo (image recognition), title, description, categories, tags, ratings, downloads and others. The results contain the degree of similarity, weaknesses and strengths, unique features and much more',
@@ -33,9 +34,18 @@ const FEATURES_DATA = {
       desc: "Access all projects' data, dowloads, ratings, reviews, audiences, appearances, analytics and rankings via our Advanced Search API. Find the projects you're really looking for, subscribe for updates about their new features, and get real-time notifications",
       img: 'bg-feat-social',
       type: CORE_FEATURE_ITEM_LEFT_TYPE
+    },
+    {
+      title: 'Powerful Analytics & Statistics',
+      desc: "Analyze the strengths and weaknesses of compatitors, their unique features, and get all the metadata including reviews, monetization model and much more",
+      img: 'bg-feat-dashboard',
+      type: CORE_FEATURE_ITEM_RIGHT_TYPE
     }
   ],
-  features: [
+}
+const FEATURES_DATA = {
+  title: 'More Features',
+  items: [
     {
       title: 'Compatitors’ Online Presence',
       desc: 'Official website, social media, blogs, white papers',
@@ -83,6 +93,27 @@ const FEATURES_DATA = {
     }
   ]
 }
+const FAQ_DATA = {
+  title: 'FAQ',
+  items: [
+    {
+      title: 'How does it work?',
+      content: 'This is super easy'
+    },
+    {
+      title: 'How does it work?',
+      content: 'This is super easy'
+    },
+    {
+      title: 'How does it work?',
+      content: 'This is super easy'
+    },
+    {
+      title: 'How does it work?',
+      content: 'This is super easy'
+    },
+  ]
+}
 
 export default function Home() {
   const urlHelper = useUrlHelper()
@@ -97,17 +128,17 @@ export default function Home() {
     <div className="flex flex-col px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <Navbar />
       <Header />
-      <Quote
+      <WhyWe title={WHY_WE_DATA.title} items={WHY_WE_DATA.items} />
+      <CTA
         content="So often people are working hard at the wrong thing. Working on the right thing is probably more important than working hard."
         author="Caterina Fake, Flickr co-founder"
       />
       <Features
         title={FEATURES_DATA.title}
-        subtitle={FEATURES_DATA.subtitle}
-        features={FEATURES_DATA.features}
-        coreFeatures={FEATURES_DATA.coreFeatures}
+        items={FEATURES_DATA.items}
       />
       <FeedbackForm onSubmit={localAPI.createUser} />
+      <FAQ title={FAQ_DATA.title} items={FAQ_DATA.items} />
       <Footer />
     </div>
   )

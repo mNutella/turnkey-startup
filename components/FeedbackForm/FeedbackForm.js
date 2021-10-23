@@ -52,13 +52,14 @@ export default function FeedbackForm({ onSubmit }) {
     e.preventDefault()
 
     await handleReCaptchaVerify(async (token) => {
-      const { message } = await onSubmit({
+      const response = await onSubmit({
         ...formData,
         [FLAG_FIELD_NAME]: flagInputEl.current.value,
         token
       })
+      const message = response?.message
 
-      if (message.includes('Successfully')) {
+      if (message && message.includes('Successfully')) {
         setFormResult(message)
       }
 
@@ -67,23 +68,23 @@ export default function FeedbackForm({ onSubmit }) {
   }
 
   return (
-    <div id="early-access-block" className="mt-16">
+    <div id="early-access-block" className="mt-24">
+      <div className="w-full mx-auto mb-16 text-center">
+        <h1 className="text-5xl sm:text-7xl font-medium text-primary-main">
+          Request early access
+        </h1>
+      </div>
       <form
-        className="w-full p-4 sm:p-8 border-4 rounded-lg border-secondary-light"
+        className="w-full p-4 sm:p-8 border-4 rounded-xl border-secondary-light"
         onSubmit={onFormSubmit}
       >
-        <div className="w-full mx-auto mb-16 text-center">
-          <h1 className="text-5xl sm:text-6xl font-medium text-primary-main">
-            Request early access
-          </h1>
-        </div>
         {formResult && (
-          <h4 className="text-3xl text-center mb-2 text-primary-main animate-fadeIn">
-            🎉 {formResult} 🎉
+          <h4 className="text-3xl text-center mb-2 text-primary-main">
+            {formResult}
           </h4>
         )}
         <div className="flex items-center justify-center lg:space-x-5">
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2 lg:p-10">
             <div className="mb-6">
               <label
                 className="block text-base sm:text-lg text-primary-main font-medium mb-1"
@@ -92,7 +93,7 @@ export default function FeedbackForm({ onSubmit }) {
                 Email <span className="text-red-500 font-normal">*</span>
               </label>
               <input
-                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
+                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded-xl w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
                 id="inline-full-name"
                 required
                 name={EMAIL_FIELD_NAME}
@@ -110,7 +111,7 @@ export default function FeedbackForm({ onSubmit }) {
                 Occupation <span className="text-red-500 font-normal">*</span>
               </label>
               <input
-                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
+                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded-xl w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
                 id="inline-full-name"
                 required
                 name={PROFESSION_FIELD_NAME}
@@ -132,7 +133,7 @@ export default function FeedbackForm({ onSubmit }) {
                 </span>
               </label>
               <input
-                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
+                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded-xl w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
                 id="inline-full-name"
                 name={FLAG_FIELD_NAME}
                 type="text"
@@ -150,7 +151,7 @@ export default function FeedbackForm({ onSubmit }) {
                 Message
               </label>
               <textarea
-                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
+                className="bg-secondary-light text-base sm:text-lg appearance-none border-2 border-secondary-light rounded-xl w-full py-4 px-4 text-primary-main leading-tight focus:outline-none focus:bg-common-white focus:border-primary-light"
                 id="inline-full-name"
                 name={MESSAGE_FIELD_NAME}
                 type="text"
@@ -169,7 +170,7 @@ export default function FeedbackForm({ onSubmit }) {
             />
             <div className="">
               <button
-                className="w-full inline-flex items-center justify-center p-5 text-base font-medium tracking-wide text-common-white transition duration-200 rounded-lg bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
+                className="w-full inline-flex items-center justify-center p-5 text-base font-medium rounded-full tracking-wide text-common-white transition duration-200 bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
                 type="submit"
               >
                 Request
@@ -177,7 +178,7 @@ export default function FeedbackForm({ onSubmit }) {
             </div>
           </div>
           <div
-            className={`w-1/2 animate-fadeIn h-header-img hidden lg:block ${
+            className={`w-1/2 h-header-img hidden lg:block ${
               !formResult ? 'bg-form-def' : 'bg-form-success'
             } bg-contain bg-center bg-no-repeat`}
           />

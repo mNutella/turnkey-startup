@@ -8,7 +8,7 @@ export default function Privacy() {
 
       <p className="mb-2">
         These terms and conditions outline the rules and regulations for the use
-        of Idea Research's Website, located at
+        of Idea Research's Website, located at{' '}
         <a
           href="https://www.idea-research.com"
           rel="external nofollow noopener"
@@ -22,10 +22,27 @@ export default function Privacy() {
 
       <p className="mb-2">
         By accessing this website you agree to be bound by these terms and
-        conditions. Do not continue to use www.idea-research.com if you do not
-        agree to take all of the terms and conditions stated on this page. Also,
-        if a term does not make sense to you, please let us know by e-mailing
-        pr.idearesearch@gmail.com.
+        conditions. Do not continue to use{' '}
+        <a
+          href="https://www.idea-research.com"
+          rel="external nofollow noopener"
+          target="_blank"
+          className="text-primary-light hover:text-blue-400"
+        >
+          www.idea-research.com
+        </a>
+        if you do not agree to take all of the terms and conditions stated on
+        this page. Also, if a term does not make sense to you, please let us
+        know by e-mailing
+        <a
+          href="mailto:pr.idearesearch@gmail.com"
+          aria-label="Our email"
+          title="Our email"
+          className="transition-colors duration-300 text-primary-light hover:text-blue-400"
+        >
+          pr.idearesearch@gmail.com
+        </a>
+        .
       </p>
 
       <h2 className="text-3xl my-8">Terms Used in this Terms of Service</h2>
@@ -42,7 +59,16 @@ export default function Privacy() {
         <li>
           <p className="mb-2">
             <strong>The Company, We, Our, Us, Idea Research and Website</strong>{' '}
-            refers to www.idea-research.com (or its subdomains).
+            refers to
+            <a
+              href="https://www.idea-research.com"
+              rel="external nofollow noopener"
+              target="_blank"
+              className="text-primary-light hover:text-blue-400"
+            >
+              www.idea-research.com
+            </a>
+            (or its subdomains).
           </p>
         </li>
         <li>

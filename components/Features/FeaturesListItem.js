@@ -11,7 +11,7 @@ export default function FeaturesListItem({ title, desc, icon }) {
           className="stroke-current text-primary-light"
         />
         <h3 className="text-3xl font-normal mb-2">{title}</h3>
-        <p className="text-lg sm:text-xl text-secondary-main line-clamp-4">{desc}</p>
+        <p className="text-xl sm:text-xl text-secondary-main line-clamp-4">{desc}</p>
       </div>
     </article>
   )

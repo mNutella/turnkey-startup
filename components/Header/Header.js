@@ -3,38 +3,36 @@ import { Icon } from '../Icon'
 
 export default function Header() {
   return (
-    <section className="flex-1 mt-16">
+    <div className="flex-1 mt-8">
       <div className="flex justify-between">
-        <div className="flex flex-col justify-center w-full mb-10 sm:mb-0 text-center sm:text-left sm:animate-slideIn">
-          <div className="max-w-xl mb-6">
+        <div className="flex flex-col justify-center w-full mb-10 lg:mb-0 text-center lg:text-left">
+          <div className="lg:max-w-xl mb-6">
             <div>
               <p className="inline-block text-sm px-4 py-1 mb-4 font-semibold tracking-wider text-common-white uppercase rounded-full bg-secondary-main">
                 Comming soon
               </p>
             </div>
-            <h1 className="max-w-lg mb-6 text-5xl font-bold tracking-tight text-primary-main sm:text-7xl sm:leading-none">
-              Your tech{' '}
+            <h1 className="lg:max-w-lg mb-6 text-6xl sm:text-7xl font-bold tracking-tight text-primary-main sm:leading-none">
+              Your Tech{' '}
               <span className="inline-block text-success-dark">
-                idea research
+                Idea Research
               </span>
             </h1>
-            <h6 className="max-w-md text-secondary-main text-xl">
+            <h6 className="lg:max-w-md text-secondary-main text-xl sm:text-2xl">
               Identify your real competitors, improve your idea and become a{' '}
-              <span className="inline-block text-2xl">🦄</span>
-              {'  '}
-              startup
+              <span className="inline-block text-2xl">🦄</span> startup
             </h6>
           </div>
-          <div className="flex items-center justify-center sm:justify-start">
+          <div className="flex items-center justify-center lg:justify-start">
             <a
               href="#early-access-block"
-              className="inline-flex items-center justify-center h-12 p-7 font-medium text-base tracking-wide text-white transition duration-200 rounded-lg bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
+              className="inline-flex items-center justify-center h-12 p-7 font-medium text-base rounded-full tracking-wide text-white transition duration-200 bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
             >
               Request early access
             </a>
           </div>
         </div>
-        <div className="w-full animate-fadeIn h-header-img hidden lg:block bg-header-illust bg-contain bg-right bg-no-repeat" />
+        <div className="w-full h-header-img hidden lg:block bg-header-illust bg-contain bg-right bg-no-repeat" />
       </div>
       <div className="w-full flex justify-center items-center">
         <a href="#features-block">
@@ -45,6 +43,6 @@ export default function Header() {
           />
         </a>
       </div>
-    </section>
+    </div>
   )
 }
