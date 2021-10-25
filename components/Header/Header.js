@@ -19,10 +19,9 @@ export default function Header() {
               </span>
             </h1>
             <h6 className="lg:max-w-md text-secondary-main text-xl sm:text-2xl">
-              Forget about manual research - idea validation is now fast and easy!
+              Forget about manual research.
               <br />
-              Become a{' '}
-              <span className="inline-block text-2xl">🦄</span> startup in few steps
+              Idea validation is now fast and easy with search engine <b>ideasy</b>
             </h6>
           </div>
           <div className="flex items-center justify-center lg:justify-start">
@@ -37,7 +36,7 @@ export default function Header() {
         <div className="w-full h-header-img hidden lg:block bg-header-illust bg-contain bg-right bg-no-repeat" />
       </div>
       <div className="w-full flex justify-center items-center">
-        <a href="#use-us-block">
+        <a href="#why-us-block">
           <Icon
             name="scroll-down"
             classNameWrapper="w-20 animate-bounce"

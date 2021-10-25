@@ -33,7 +33,7 @@ export default function Privacy() {
         </a>
         if you do not agree to take all of the terms and conditions stated on
         this page. Also, if a term does not make sense to you, please let us
-        know by e-mailing
+        know by e-mailing{' '}
         <a
           href="mailto:pr.idearesearch@gmail.com"
           aria-label="Our email"
@@ -58,8 +58,8 @@ export default function Privacy() {
         </li>
         <li>
           <p className="mb-2">
-            <strong>The Company, We, Our, Us, Idea Research and Website</strong>{' '}
-            refers to
+            <strong>The Company, We, Our, Us, Idea Research and Website</strong>
+            refers to{' '}
             <a
               href="https://www.idea-research.com"
               rel="external nofollow noopener"
@@ -67,7 +67,7 @@ export default function Privacy() {
               className="text-primary-light hover:text-blue-400"
             >
               www.idea-research.com
-            </a>
+            </a>{' '}
             (or its subdomains).
           </p>
         </li>

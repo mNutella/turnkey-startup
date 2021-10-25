@@ -12,7 +12,7 @@ export default function FAQListItem({ title, content }) {
         className="flex items-center justify-between w-full p-4"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="text-primary-main text-2xl font-medium text-left">{title}</p>
+        <p className="flex-1 text-primary-main text-2xl font-medium text-left">{title}</p>
         <svg
           viewBox="0 0 24 24"
           className={`w-3 text-gray-600 transform transition-transform duration-200 ${

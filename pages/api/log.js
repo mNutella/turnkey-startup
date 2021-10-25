@@ -30,8 +30,8 @@ export default async function logHandler(req, res) {
   if (method === 'POST') {
     try {
       await addLogDocument({
-        ip: ip,
-        ref: ref,
+        ip,
+        ref,
         userAgent,
         date: new Date().toUTCString()
       })

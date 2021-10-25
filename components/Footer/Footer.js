@@ -4,9 +4,9 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className="flex-1 px-4 mt-32 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="sm:col-span-2">
+    <footer className="flex-1 mt-32 m-full">
+      <div className="w-full flex flex-wrap space-y-4 sm:space-y-0 justify-center items-center sm:space-x-8 mb-8">
+        <div className="w-full sm:flex-1">
           <Link href="/">
             <a
               aria-label="Go home"
@@ -16,18 +16,8 @@ export default function Footer() {
               <Image src="/logo.svg" width={150} height={50} />
             </a>
           </Link>
-          <div className="mt-6 lg:max-w-sm">
-            <p className="text-base text-primary-main">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam.
-            </p>
-            <p className="mt-4 text-base text-primary-main">
-              Eaque ipsa quae ab illo inventore veritatis et quasi architecto
-              beatae vitae dicta sunt explicabo.
-            </p>
-          </div>
         </div>
-        <div className="space-y-2 text-base">
+        <div className="w-full sm:flex-1 text-base sm:flex sm:flex-col sm:justify-center sm:items-center">
           <p className="text-lg font-bold tracking-wide text-primary-main">
             Contacts
           </p>
@@ -43,7 +33,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div>
+        <div className="w-full sm:flex-1 sm:flex sm:flex-col sm:justify-center sm:items-center">
           <span className="text-lg font-bold tracking-wide text-primary-main">
             Social
           </span>
@@ -58,15 +48,11 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-          <p className="mt-4 text-base text-secondary-main">
-            Bacon ipsum dolor amet short ribs pig sausage prosciutto chicken
-            spare ribs salami.
-          </p>
         </div>
       </div>
       <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
         <p className="text-base text-gray-600">
-          © Copyright 2021 idea-research. All rights reserved.
+          © Copyright 2021 Idea-Research. All rights reserved.
         </p>
         <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
           <li>

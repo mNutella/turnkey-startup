@@ -20,7 +20,7 @@ export default function Navbar() {
         <ul className="hidden items-center space-x-8 lg:flex">
           <li>
             <a
-              href="#use-us-block"
+              href="#why-us-block"
               aria-label="Why Us"
               title="Why Us"
               className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
@@ -104,7 +104,7 @@ export default function Navbar() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="#use-us-block"
+                  href="#why-us-block"
                   aria-label="Use Us"
                   title="Use Us"
                   className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
@@ -118,7 +118,7 @@ export default function Navbar() {
                   href="#features-block"
                   aria-label="Features"
                   title="Features"
-                  className="p-2 font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
+                  className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
                   onClick={() => setMenuShow(false)}
                 >
                   Features
@@ -140,7 +140,7 @@ export default function Navbar() {
                   href="#early-access-block"
                   aria-label="Features"
                   title="Features"
-                  className="p-2 font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
+                  className="text-lg p-2 font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
                   onClick={() => setMenuShow(false)}
                 >
                   Request early access

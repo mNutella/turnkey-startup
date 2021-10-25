@@ -25,7 +25,7 @@ const WHY_WE_DATA = {
     },
     {
       title: "No need to collect and process data yourself",
-      desc: 'The most complete database allows you to get all the necessary information in just one place. <br /> You can easily export meaningful and real-time data in your preferred format',
+      desc: 'The most comprehensive database allows you to get all the necessary information in just one place. <br /> You can easily export meaningful and real-time data in your preferred format',
       img: 'bg-feat-database',
       type: CORE_FEATURE_ITEM_RIGHT_TYPE
     },
@@ -74,7 +74,7 @@ const FEATURES_DATA = {
     },
     {
       title: 'Export Data',
-      desc: 'Export data, insights and audiences in your preferred format',
+      desc: 'Export the most complete data in your preferred format',
       icon: 'export'
     },
   ]
@@ -84,28 +84,28 @@ const FAQ_DATA = {
   title: 'FAQ',
   items: [
     {
-      title: 'How search works?',
-      content: 'AI-based semantic search by image recognition, title, description, categories, tags, ratings, downloads and others. The results contain the degree of similarity, weaknesses and strengths, unique features and much more'
+      title: 'How does search engine work?',
+      content: 'AI-based semantic search by title, description, categories, tags, image recognition for a logo, ratings, downloads, and others. The results contain the degree of similarity, weaknesses and strengths, unique features, and much more'
     },
     {
-      title: 'What is our database?',
-      content: 'The continuously updated database to provide you the most relevant experience. <br /> <b>Sources</b>: Google Play, Apple Appstore, Amazon Appstore, Steam, Product Hunt, Hacker News, Github and others (application marketplaces, product platforms and online newspapers)'
-    },
-    {
-      title: 'What is API?',
-      content: "Access all projects' data, downloads, ratings, reviews, audiences, appearances, analytics and rankings via our API. Find the projects you're really looking for, subscribe for updates about their new features, and get real-time notifications. <br /> High quotes and flexible pricing."
+      title: 'What is database?',
+      content: 'The continuously updated database provides you with the most relevant experience. <br /> <b>Sources</b>: Google Play, Apple Appstore, Amazon Appstore, Steam, Product Hunt, Hacker News, Github, and others (application marketplaces, product platforms, and online newspapers)'
     },
     {
       title: 'What data is represented in analytics?',
-      content: "<b>Ratings</b>: See the idea's appearance and visibility, worldwide ranking and category leaderboards (google trends). <br /> <b>Statistics</b>: Get all including reviews, monetization model and much more. <br /> <b>Data</b>: title, description, category, tags, weaknesses, strengths, unique features and much more."
+      content: `Idea parameters: <ul class="list-disc ml-8 my-2"> <li>Appearance and visibility</li> <li>Worldwide ranking</li> <li>Category leaderboards</li> <li>Audience</li> <li>Monetization model</li> <li>Weaknesses and strengths</li> <li>Unique features</li></ul>and much more...`
     },
     {
-      title: 'How to estimate project complexity, development time, approximate budget?',
-      content: "<b>Ratings</b>: See the idea's appearance and visibility, worldwide ranking and category leaderboards (google trends). <br /> <b>Statistics</b>: Get all including reviews, monetization model and much more. <br /> <b>Data</b>: title, description, category, tags, weaknesses, strengths, unique features and much more."
+      title: 'What is API?',
+      content: "Graphql provides you convenient and flexible access to all projects' data, downloads, ratings, reviews, audiences, appearances, and rankings. <br /> <b>We guarantee you much higher quotes and lower pricing regarding our competitors</b>"
+    },
+    {
+      title: 'What is idea inspiration?',
+      content: "A set of trending topics, popular projects, and global issues with a nested structure that allows you to dive deeper into the fields you are interested in and decide on the idea of a startup"
     },
     {
       title: 'What is changelog?',
-      content: "Get news, info about new features - not to loose your uniqueness in development phase."
+      content: "Subscribe to competitor updates and receive reports on time not to lose the uniqueness of your own at the development stage"
     }
   ]
 }
