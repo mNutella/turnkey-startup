@@ -15,51 +15,47 @@ import useLocalAPI from '../hooks/useLocalAPI'
 import useUrlHelper from '../hooks/useUrlHelper'
 
 const WHY_WE_DATA = {
-  title: 'Use Us For',
+  title: 'Validate Idea',
   items: [
     {
-      title: 'Advanced Search',
-      desc: 'AI-based semantic search by logo (image recognition), title, description, categories, tags, ratings, downloads and others. The results contain the degree of similarity, weaknesses and strengths, unique features and much more',
+      title: "Search shouldn't be too time consuming",
+      desc: 'AI-based search makes browsing more complete by understanding the context of what you are trying to find. <br />  Identify your idea uniqueness and get the most relevant competitors in one click',
       img: 'bg-feat-ai-search',
       type: CORE_FEATURE_ITEM_LEFT_TYPE
     },
     {
-      title: 'Gigantic Database',
-      desc: 'The continuously updated database to provide you the most relevant experience. <br /> Sources: Google Play, Apple Appstore, Amazon Appstore, Steam, Product Hunt, Tech Crunch, Github and others (Web, Desktop and Mobile)',
+      title: "No need to collect and process data yourself",
+      desc: 'The most complete database allows you to get all the necessary information in just one place. <br /> You can easily export meaningful and real-time data in your preferred format',
       img: 'bg-feat-database',
       type: CORE_FEATURE_ITEM_RIGHT_TYPE
     },
     {
-      title: 'Powerful Easy-To-Use API',
-      desc: "Access all projects' data, dowloads, ratings, reviews, audiences, appearances, analytics and rankings via our Advanced Search API. Find the projects you're really looking for, subscribe for updates about their new features, and get real-time notifications",
-      img: 'bg-feat-social',
+      title: 'No place for complicated data analytics',
+      desc: "Visual representation allows you to get a complete picture of the future product. Extract key metrics from a large amount of data to make the final decision on your idea",
+      img: 'bg-feat-dashboard',
       type: CORE_FEATURE_ITEM_LEFT_TYPE
     },
     {
-      title: 'Powerful Analytics & Statistics',
-      desc: "Analyze the strengths and weaknesses of compatitors, their unique features, and get all the metadata including reviews, monetization model and much more",
-      img: 'bg-feat-dashboard',
+      title: 'API integration without headache',
+      desc: "Full access to up-to-date data, insights and audiences allows you to improve your business processes by making them easier for you and more reliable for your customers",
+      img: 'bg-feat-social',
       type: CORE_FEATURE_ITEM_RIGHT_TYPE
     }
-  ],
+  ]
 }
+
 const FEATURES_DATA = {
   title: 'More Features',
   items: [
     {
-      title: 'Compatitors’ Online Presence',
-      desc: 'Official website, social media, blogs, white papers',
-      icon: 'online-presence'
+      title: 'Idea Inspiration',
+      desc: 'Suggestions based on global issues, trends and popular products',
+      icon: 'inspiration'
     },
     {
-      title: 'Statistics',
-      desc: 'Get all the metadata including reviews, monetization model and much more',
-      icon: 'statistics'
-    },
-    {
-      title: 'Analytics',
-      desc: 'Analyze the strengths and weaknesses of compatitors, their unique features',
-      icon: 'analytics'
+      title: 'Look into',
+      desc: 'Identify the strengths, weaknesses and unique features of your competitors',
+      icon: 'diamond'
     },
     {
       title: 'Estimation',
@@ -67,51 +63,50 @@ const FEATURES_DATA = {
       icon: 'estimation'
     },
     {
-      title: 'Compatitors’ Changelog',
-      desc: 'Follow your competitors’ updates and get notifications',
+      title: 'Changelog',
+      desc: 'Follow your competitors’ updates and get real-time reports',
       icon: 'logs'
     },
     {
+      title: 'Online Presence',
+      desc: 'Competitors’ official websites, social media, blogs, white papers',
+      icon: 'online-presence'
+    },
+    {
       title: 'Export Data',
-      desc: 'Export all available metadata as CSVs or file dumps',
+      desc: 'Export data, insights and audiences in your preferred format',
       icon: 'export'
     },
-    {
-      title: '20+ Languages',
-      desc: 'Filter the search by country and language availability',
-      icon: 'languages'
-    },
-    {
-      title: 'Idea Inspiration',
-      desc: 'Suggestions based on current global issues, global trends and popular products',
-      icon: 'inspiration'
-    },
-    {
-      title: 'Ratings',
-      desc: "See the idea's appearance and visibility, worldwide ranking and category leaderboards",
-      icon: 'ratings'
-    }
   ]
 }
+
 const FAQ_DATA = {
   title: 'FAQ',
   items: [
     {
-      title: 'How does it work?',
-      content: 'This is super easy'
+      title: 'How search works?',
+      content: 'AI-based semantic search by image recognition, title, description, categories, tags, ratings, downloads and others. The results contain the degree of similarity, weaknesses and strengths, unique features and much more'
     },
     {
-      title: 'How does it work?',
-      content: 'This is super easy'
+      title: 'What is our database?',
+      content: 'The continuously updated database to provide you the most relevant experience. <br /> <b>Sources</b>: Google Play, Apple Appstore, Amazon Appstore, Steam, Product Hunt, Hacker News, Github and others (application marketplaces, product platforms and online newspapers)'
     },
     {
-      title: 'How does it work?',
-      content: 'This is super easy'
+      title: 'What is API?',
+      content: "Access all projects' data, downloads, ratings, reviews, audiences, appearances, analytics and rankings via our API. Find the projects you're really looking for, subscribe for updates about their new features, and get real-time notifications. <br /> High quotes and flexible pricing."
     },
     {
-      title: 'How does it work?',
-      content: 'This is super easy'
+      title: 'What data is represented in analytics?',
+      content: "<b>Ratings</b>: See the idea's appearance and visibility, worldwide ranking and category leaderboards (google trends). <br /> <b>Statistics</b>: Get all including reviews, monetization model and much more. <br /> <b>Data</b>: title, description, category, tags, weaknesses, strengths, unique features and much more."
     },
+    {
+      title: 'How to estimate project complexity, development time, approximate budget?',
+      content: "<b>Ratings</b>: See the idea's appearance and visibility, worldwide ranking and category leaderboards (google trends). <br /> <b>Statistics</b>: Get all including reviews, monetization model and much more. <br /> <b>Data</b>: title, description, category, tags, weaknesses, strengths, unique features and much more."
+    },
+    {
+      title: 'What is changelog?',
+      content: "Get news, info about new features - not to loose your uniqueness in development phase."
+    }
   ]
 }
 
@@ -121,7 +116,7 @@ export default function Home() {
 
   useEffect(() => {
     const params = urlHelper.getParams()
-    ;(async () => await localAPI.createLog(params.get('ref')))()
+      ; (async () => await localAPI.createLog(params.get('ref')))()
   }, [])
 
   return (
@@ -130,13 +125,10 @@ export default function Home() {
       <Header />
       <WhyWe title={WHY_WE_DATA.title} items={WHY_WE_DATA.items} />
       <CTA
-        content="So often people are working hard at the wrong thing. Working on the right thing is probably more important than working hard."
+        content="Working on the right thing is probably more important than working hard."
         author="Caterina Fake, Flickr co-founder"
       />
-      <Features
-        title={FEATURES_DATA.title}
-        items={FEATURES_DATA.items}
-      />
+      <Features title={FEATURES_DATA.title} items={FEATURES_DATA.items} />
       <FeedbackForm onSubmit={localAPI.createUser} />
       <FAQ title={FAQ_DATA.title} items={FAQ_DATA.items} />
       <Footer />

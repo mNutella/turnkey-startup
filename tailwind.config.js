@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
-        body: ['"Baloo 2"']
+        body: ['"Baloo 2"', ...defaultTheme.fontFamily.sans]
       },
       backgroundImage: (theme) => ({
         'header-illust': "url('/img/header-illust.svg')",

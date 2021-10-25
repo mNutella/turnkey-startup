@@ -21,11 +21,11 @@ export default function Navbar() {
           <li>
             <a
               href="#use-us-block"
-              aria-label="Use Us"
-              title="Use Us"
+              aria-label="Why Us"
+              title="Why Us"
               className="text-lg font-medium tracking-wide text-primary-main transition-colors duration-200 hover:text-primary-light-accent"
             >
-              Use Us
+              Why Us
             </a>
           </li>
           <li>
@@ -98,9 +98,8 @@ export default function Navbar() {
             </button>
           )}
           <nav
-            className={`absolute top-12 left-0 w-full p-5 text-center bg-common-white border rounded-xl ${
-              !isMenuShow && 'hidden'
-            }`}
+            className={`absolute top-12 left-0 w-full p-5 text-center bg-common-white border rounded-xl ${!isMenuShow && 'hidden'
+              }`}
           >
             <ul className="space-y-4">
               <li>

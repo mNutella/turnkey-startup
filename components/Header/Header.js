@@ -19,14 +19,16 @@ export default function Header() {
               </span>
             </h1>
             <h6 className="lg:max-w-md text-secondary-main text-xl sm:text-2xl">
-              Identify your real competitors, improve your idea and become a{' '}
-              <span className="inline-block text-2xl">🦄</span> startup
+              Forget about manual research - idea validation is now fast and easy!
+              <br />
+              Become a{' '}
+              <span className="inline-block text-2xl">🦄</span> startup in few steps
             </h6>
           </div>
           <div className="flex items-center justify-center lg:justify-start">
             <a
               href="#early-access-block"
-              className="inline-flex items-center justify-center h-12 p-7 font-medium text-base rounded-full tracking-wide text-white transition duration-200 bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
+              className="inline-flex items-center justify-center py-5 px-7 font-medium text-base rounded-full tracking-wide text-white transition duration-200 bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
             >
               Request early access
             </a>
@@ -35,7 +37,7 @@ export default function Header() {
         <div className="w-full h-header-img hidden lg:block bg-header-illust bg-contain bg-right bg-no-repeat" />
       </div>
       <div className="w-full flex justify-center items-center">
-        <a href="#features-block">
+        <a href="#use-us-block">
           <Icon
             name="scroll-down"
             classNameWrapper="w-20 animate-bounce"

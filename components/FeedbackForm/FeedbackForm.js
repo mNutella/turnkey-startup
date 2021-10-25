@@ -98,7 +98,7 @@ export default function FeedbackForm({ onSubmit }) {
                 required
                 name={EMAIL_FIELD_NAME}
                 type="email"
-                placeholder="idea-research@gmail.com"
+                placeholder="pr.idearesearch@gmail.com"
                 value={formData[EMAIL_FIELD_NAME]}
                 onChange={onFormChange}
               />
@@ -117,7 +117,7 @@ export default function FeedbackForm({ onSubmit }) {
                 name={PROFESSION_FIELD_NAME}
                 type="text"
                 maxLength="20"
-                placeholder="designer / developer / investor"
+                placeholder="designer / developer / entrepreneur"
                 value={formData[PROFESSION_FIELD_NAME]}
                 onChange={onFormChange}
               />
@@ -156,7 +156,7 @@ export default function FeedbackForm({ onSubmit }) {
                 name={MESSAGE_FIELD_NAME}
                 type="text"
                 maxLength="256"
-                placeholder="Write something to help us become better. Thank you!"
+                placeholder="We greatly appreciate your help. Thank you!"
                 value={formData[MESSAGE_FIELD_NAME]}
                 onChange={onFormChange}
               />
@@ -170,7 +170,7 @@ export default function FeedbackForm({ onSubmit }) {
             />
             <div className="">
               <button
-                className="w-full inline-flex items-center justify-center p-5 text-base font-medium rounded-full tracking-wide text-common-white transition duration-200 bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
+                className="w-full inline-flex items-center justify-center py-5 px-7 text-base font-medium rounded-full tracking-wide text-common-white transition duration-200 bg-primary-light hover:bg-primary-light-accent focus:outline-none focus:bg-primary-light-accent"
                 type="submit"
               >
                 Request
@@ -178,9 +178,8 @@ export default function FeedbackForm({ onSubmit }) {
             </div>
           </div>
           <div
-            className={`w-1/2 h-header-img hidden lg:block ${
-              !formResult ? 'bg-form-def' : 'bg-form-success'
-            } bg-contain bg-center bg-no-repeat`}
+            className={`w-1/2 h-header-img hidden lg:block ${!formResult ? 'bg-form-def' : 'bg-form-success'
+              } bg-contain bg-center bg-no-repeat`}
           />
         </div>
       </form>
