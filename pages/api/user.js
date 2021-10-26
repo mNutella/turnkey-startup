@@ -16,6 +16,7 @@ export default async function userHandler(req, res) {
     body: { email, profession, message = '', token, flag }
   } = req
   const ip = getIp(headers, connection)
+  const userAgent = headers['user-agent'] || ''
   const db = firebaseApp.getInstance()
 
   if (apiLimiter.isInBlackList(ip))
@@ -47,7 +48,9 @@ export default async function userHandler(req, res) {
         profession,
         message,
         promo: isPromo,
-        date: new Date().toUTCString()
+        date: new Date().toUTCString(),
+        ip,
+        userAgent
       })
       res.status(200).json({
         message: !isPromo ? 'Successfully sent' : 'Successfully sent with promo'

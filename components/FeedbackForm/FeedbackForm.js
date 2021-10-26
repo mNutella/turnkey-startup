@@ -68,8 +68,8 @@ export default function FeedbackForm({ onSubmit }) {
   }
 
   return (
-    <div id="early-access-block" className="mt-24">
-      <div className="w-full mx-auto mb-16 text-center">
+    <div id="early-access-block" className="mt-12 sm:mt-24">
+      <div className="w-full mx-auto mb-24 text-center">
         <h1 className="text-5xl sm:text-7xl font-medium text-primary-main">
           Request early access
         </h1>

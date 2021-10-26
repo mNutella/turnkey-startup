@@ -5,13 +5,13 @@ export default function CoreFeaturesListItem({ title, desc, img, type }) {
   const [isLeftImgOrder] = useState(type === CORE_FEATURE_ITEM_LEFT_TYPE)
 
   return (
-    <div className="w-full h-full flex justify-between overflow-hidden mb-24">
+    <div className="w-full h-full flex flex-col lg:flex-row justify-between overflow-hidden mb-8 sm:mb-24">
       <div
-        className={`w-full h-header-img hidden lg:block ${img} bg-contain bg-no-repeat ${isLeftImgOrder ? 'order-1 bg-left' : 'order-2 bg-right'
+        className={`w-full h-80 mb-16 lg:mb-0 lg:h-header-img ${img} bg-contain bg-no-repeat bg-center ${isLeftImgOrder ? 'lg:order-1 lg:bg-left' : 'lg:order-2 lg:bg-right'
           }`}
       />
       <div
-        className={`w-full h-auto flex flex-col justify-center text-center lg:text-left ${isLeftImgOrder ? 'order-2 items-end' : 'order-1 items-start'
+        className={`w-full h-auto mb-16 lg:mb-0 flex flex-col justify-center text-center bg-center lg:text-left ${isLeftImgOrder ? 'order-2 items-end' : 'order-1 items-start'
           }`}
       >
         <div className="w-full lg:max-w-md">
